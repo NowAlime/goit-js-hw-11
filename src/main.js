@@ -1,11 +1,11 @@
-import SimpleLightbox from 'simplelightbox';
-import 'simplelightbox/dist/simple-lightbox.min.css';
 
-import iziToast from 'izitoast';
-import 'izitoast/dist/css/iziToast.min.css';
+import iziToast from "izitoast";
+import "izitoast/dist/css/iziToast.min.css";
+import SimpleLightbox from "simplelightbox";
+import "simplelightbox/dist/simple-lightbox.min.css";
+import { feImages } from "./js/pixabay-api.js";
+import { renderImages } from "./js/render-functions.js";
 
-import { getImage } from './js/pixabay-api';
-import { imagesTemplate } from './js/render-functions';
 
 
 const galleryList = document.querySelector(".gallery");
@@ -39,8 +39,8 @@ form.addEventListener("submit", (event) => {
         });
     }
     if (query) {
-        getImage(query)
-            .then(data =>imagesTemplate(data.hits))
+        feImages(query)
+            .then(data => renderImages(data.hits))
             .catch(error => {
                 console.log(error);
                 iziToast.error({
