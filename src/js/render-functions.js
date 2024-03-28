@@ -1,4 +1,3 @@
-
 import iziToast from "izitoast";
 import "izitoast/dist/css/iziToast.min.css";
 import SimpleLightbox from "simplelightbox";
@@ -42,5 +41,3 @@ export function renderImages(data) {
   }
 }
 
-const lightbox = new SimpleLightbox('.gallery a', { /* options */ });
-lightbox.refresh();

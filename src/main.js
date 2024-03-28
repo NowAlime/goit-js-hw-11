@@ -1,7 +1,6 @@
 
 import iziToast from "izitoast";
 import "izitoast/dist/css/iziToast.min.css";
-import SimpleLightbox from "simplelightbox";
 import "simplelightbox/dist/simple-lightbox.min.css";
 import { feImages } from "./js/pixabay-api.js";
 import { renderImages } from "./js/render-functions.js";
@@ -9,36 +8,15 @@ import { renderImages } from "./js/render-functions.js";
 
 
 const galleryList = document.querySelector(".gallery");
-let query;
+let query='';
 const input = document.querySelector("input");
 const form = document.querySelector("form");
-const loader = document.querySelector('.loader');
-
-function showLoader() {
-    loader.classList.remove("is-hidden");
-}
-
-function hideLoader() {
-    loader.classList.add("is-hidden");
-}
-
-input.addEventListener("input", (event) => {
-    event.preventDefault();
-    query = input.value.trim();
-    
-});
 
 form.addEventListener("submit", (event) => {
     event.preventDefault();
-    showLoader();
-    if (query === "") {
-        iziToast.error({
-            color: 'yellow',
-            message: ` Please fill in the field for search`,
-            position: 'topRight',
-        });
-    }
-    if (query) {
+    query = input.value.trim();
+   if (query) {
+    galleryList.innerHTML = '<div class="loader"></div>';
         feImages(query)
             .then(data => renderImages(data.hits))
             .catch(error => {
@@ -49,7 +27,7 @@ form.addEventListener("submit", (event) => {
                     position: 'topRight',
                 })
             })
-            .finally(() => hideLoader())
+           
     }
     galleryList.innerHTML = "";
 });

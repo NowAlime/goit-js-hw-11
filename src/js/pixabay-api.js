@@ -1,4 +1,3 @@
-
 const input = document.querySelector("input");
 const query = input.value.trim();
 const encodedQuery = encodeURIComponent(query);
