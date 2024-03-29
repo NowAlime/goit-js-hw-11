@@ -87,3 +87,15 @@ font-size: 14px;
   width: 160px;
   height: 160px;
 }
+
+
+.loader {
+  width: 160px;
+  height: 185px;
+  position: relative;
+  background: #fff;
+  border-radius: 100px 100px 0 0;
+}
+
+.is-hidden {
+  display: none;}
