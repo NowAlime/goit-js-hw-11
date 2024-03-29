@@ -28,14 +28,14 @@ function submitHandle (event)  {
 
     
     if (valueInput  === "") {
-        showLoader();
+     
         iziToast.error({
             color: 'yellow',
             message: ` Please fill in the field for search`,
             position: 'topRight',
         });
        
-        
+        showLoader();
     }   
     if (valueInput ) {
         fetchImages(valueInput)
