@@ -14,11 +14,12 @@ form.addEventListener("submit",submitHandle);
 
 function submitHandle (event)  {
     event.preventDefault();
+    galleryList.innerHTML = "";
     const valueInput = input.value.trim();
 
     
     if (valueInput  === "") {
-        galleryList.innerHTML = "";
+     
       loader.classList.add('is-hidden');
         iziToast.error({
             color: 'yellow',
