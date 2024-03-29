@@ -18,11 +18,12 @@ function showLoader() {
   }
 
 
-hideLoader();
-form.addEventListener("submit",submitHandle);
+  hideLoader();
+  form.addEventListener("submit",submitHandle);
 
 function submitHandle (event)  {
     event.preventDefault();
+   
     galleryList.innerHTML = "";
     const valueInput = input.value.trim();
 
@@ -48,7 +49,7 @@ function submitHandle (event)  {
                     position: 'topRight',
                 })
 
-            }).finally(() => hideLoader())
+            }).finally(() => hideLoader() )
             
         
     }
