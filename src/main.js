@@ -30,7 +30,7 @@ function submitHandle (event)  {
         
     }   
     if (valueInput ) {
-      form.classList.remove('is-hidden');
+      loader.classList.remove('is-hidden');
         fetchImages(valueInput)
             .then(data => renderImages(data.hits))
             .catch(error => {
