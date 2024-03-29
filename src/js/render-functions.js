@@ -1,5 +1,10 @@
 
 import SimpleLightbox from 'simplelightbox';
+
+
+const lightbox = new SimpleLightbox('ul.gallery a', {
+  captionsData: 'alt',
+});
 const galleryList = document.querySelector("ul.gallery");
 export function renderImages(data) {
   if (data.length == 0) {
@@ -28,10 +33,6 @@ export function renderImages(data) {
         .join("");
     
     galleryList.insertAdjacentHTML('beforeend', galleryMarkup);
-
-    const lightbox = new SimpleLightbox('ul.gallery a', {
-      captionsData: 'alt',
-    });
 
     lightbox.refresh();
   }
