@@ -18,6 +18,7 @@ function submitHandle (event)  {
 
     
     if (valueInput  === "") {
+        galleryList.innerHTML = "";
       loader.classList.add('is-hidden');
         iziToast.error({
             color: 'yellow',
@@ -41,5 +42,5 @@ function submitHandle (event)  {
             })
         
     }
-    galleryList.innerHTML = "";
+   
 };
