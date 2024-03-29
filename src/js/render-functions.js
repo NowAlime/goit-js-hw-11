@@ -1,11 +1,6 @@
 
-import iziToast from "izitoast";
-import "izitoast/dist/css/iziToast.min.css";
-import SimpleLightbox from "simplelightbox";
-import "simplelightbox/dist/simple-lightbox.min.css";
-
-const galleryList = document.querySelector(".gallery");
-
+import SimpleLightbox from 'simplelightbox';
+const galleryList = document.querySelector("ul.gallery");
 export function renderImages(data) {
   if (data.length == 0) {
     iziToast.error({
@@ -34,7 +29,7 @@ export function renderImages(data) {
     
     galleryList.insertAdjacentHTML('beforeend', galleryMarkup);
 
-    const lightbox = new SimpleLightbox('.gallery a', {
+    const lightbox = new SimpleLightbox('ul.gallery a', {
       captionsData: 'alt',
     });
 

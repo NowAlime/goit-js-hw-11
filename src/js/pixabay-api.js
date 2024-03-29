@@ -1,11 +1,8 @@
-const input = document.querySelector("input");
-const query = input.value.trim();
-const encodedQuery = encodeURIComponent(query);
 
-export function fetchImages(query) {
+export function fetchImages(valueInput) {
     const searchParams = new URLSearchParams({
         key: "43047953-84179c8300fd9f33658a206cf",
-        q: query,
+        q: valueInput,
         image_type: "photo",
         orientation: "horizontal",
         safesearch: "true",
